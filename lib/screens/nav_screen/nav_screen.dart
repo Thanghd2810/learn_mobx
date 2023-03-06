@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:learn_mobx/screens/home_screen.dart';
+import 'package:learn_mobx/screens/home_screen/home_screen.dart';
 
 import '../dice_screen/dice_screen.dart';
 import '../login_screen/login_screen.dart';
+import '../todo_screen/todo_screen.dart';
 
 class NavScreen extends StatefulWidget {
   const NavScreen({super.key});
@@ -20,14 +21,16 @@ class _NavScreenState extends State<NavScreen> {
     ),
     DiceScreen(),
     LoginScreen(),
+    TodoScreen(),
   ];
 
   final Map<String, IconData> _icon = {
     'Home': Icons.home,
     'Game': Icons.games_outlined,
     'Login': Icons.featured_play_list,
+    'Todo': Icons.work,
   };
-  void ButtonPress(value) {
+  void buttonPress(value) {
     setState(() {
       _currentIndex = value;
     });
@@ -38,7 +41,6 @@ class _NavScreenState extends State<NavScreen> {
     return Scaffold(
         body: _screen[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.amberAccent,
           items: _icon
               .map((title, icon) {
                 return MapEntry(
@@ -49,9 +51,10 @@ class _NavScreenState extends State<NavScreen> {
               .values
               .toList(),
           currentIndex: _currentIndex,
-          onTap: ButtonPress,
+          onTap: buttonPress,
           selectedItemColor: Colors.blueAccent,
           unselectedItemColor: Colors.black12,
+          backgroundColor: Colors.amberAccent,
         ));
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learn_mobx/screens/home_screen.dart';
+import 'package:learn_mobx/screens/home_screen/home_screen.dart';
 import 'package:learn_mobx/screens/nav_screen/nav_screen.dart';
 
 void main() {

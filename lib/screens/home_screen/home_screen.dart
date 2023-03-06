@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
-import '../store/home_screen_store.dart';
+import '../../store/home_screen_store.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key, required this.title}) : super(key: key);
