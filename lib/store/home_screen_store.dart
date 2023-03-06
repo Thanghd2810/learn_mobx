@@ -9,8 +9,14 @@ abstract class _HomeScreenStore with Store {
   @observable
   int count = 0;
 
+  @observable
+  int count1 = 5;
+
   @computed
   int get sum => count + 2;
+  // Sum
+  @computed
+  int get sum1 => count1 + count;
 
   /// action hay còn gọi là function để thay đổi trạng thái của biến khi người dùng thao tác trên UI
   @action
@@ -20,5 +26,10 @@ abstract class _HomeScreenStore with Store {
     count++;
     // ++count là cộng giá trị trực tiếp tại thời điểm đó
     // ++count;
+  }
+
+  @action
+  void decrement() {
+    count1 = count1 - 1;
   }
 }
