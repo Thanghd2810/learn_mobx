@@ -9,12 +9,12 @@ abstract class _UserStore with Store {
   /// Cách thứ nhất để call api khởi tạo là call qua hàm khởi tạo store và chỉ call 1 lần
   /// áp dụng cho việc khởi tạo dữ liệu ví dụ như khởi tạo giá trị mặc định của 1 biến trong mobx
   /// call api cho những trang chỉ fecth api 1 lần
-  _UserStore() {
-    // init();
-  }
-  void init() {
-    fetchUsers();
-  }
+  // _UserStore() {
+  //   // init();
+  // }
+  // void init() {
+  //   fetchUsers();
+  // }
 
   final UserService _service = UserService();
 
@@ -23,7 +23,7 @@ abstract class _UserStore with Store {
 
   @action
   Future<List<UserModel>> fetchUsers({int? page}) {
-    final dynamic data =
+    final dynamic data = 
         _service.getUser(url: "https://reqres.in/api/users?page=${page ?? 1}");
     usersFuture = ObservableFuture(data);
     return usersFuture;

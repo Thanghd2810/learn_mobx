@@ -6,6 +6,7 @@ import '../data/user_model.dart';
 
 class UserService {
   Dio dio = Dio();
+
   Future<List<UserModel>> getUser({required String url}) async {
     List<UserModel> listUser = [];
     try {
