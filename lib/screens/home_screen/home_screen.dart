@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
-import '../store/home_screen_store.dart';
+import '../../store/home_screen_store.dart';
 
-class MyHomePage extends StatelessWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+class HomeScreen extends StatelessWidget {
+  HomeScreen({Key? key}) : super(key: key);
 
-  final String title;
+  // final String title;
   HomeScreenStore _store = HomeScreenStore();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        backgroundColor: Colors.amber,
+        // title: Text(title),
       ),
       body: Center(
         child: Column(

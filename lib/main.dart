@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:learn_mobx/screens/home_screen.dart';
-import 'package:learn_mobx/screens/user_screen.dart';
+import 'package:learn_mobx/screens/home_screen/home_screen.dart';
+import 'package:learn_mobx/screens/user_screen/single_user_screen.dart';
+import 'package:learn_mobx/screens/user_screen/user_screen.dart';
+
+import 'screens/nav_screen/nav_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +17,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          // primarySwatch: Colors.blue,
+          ),
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
-      home: UserScreen(),
+      home: SingleUser(),
     );
   }
 }

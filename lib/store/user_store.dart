@@ -1,6 +1,8 @@
 import 'package:learn_mobx/data/user_model.dart';
 import 'package:learn_mobx/services/user_service.dart';
 import 'package:mobx/mobx.dart';
+
+import '../data/user_info_model.dart';
 part 'user_store.g.dart';
 
 class UserStore = _UserStore with _$UserStore;
@@ -21,9 +23,19 @@ abstract class _UserStore with Store {
   @observable
   ObservableFuture<List<UserModel>> usersFuture = ObservableFuture.value([]);
 
+  // @observable
+  // ObservableFuture<UserInfo> usersUpdate =ObservableFuture.value(value)
+  // @action
+  // ObservableFuture<UserInfo>? updateUser({String? hoTen, String? ngheNghiep}) {
+  //   final dynamic data =
+  //       _service.postUser(hoTen: hoTen, ngheNghiep: ngheNghiep);
+  //   usersUpdate = ObservableFuture(data);
+  //   return usersUpdate;
+  // }
+
   @action
   Future<List<UserModel>> fetchUsers({int? page}) {
-    final dynamic data = 
+    final dynamic data =
         _service.getUser(url: "https://reqres.in/api/users?page=${page ?? 1}");
     usersFuture = ObservableFuture(data);
     return usersFuture;
